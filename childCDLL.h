@@ -32,15 +32,15 @@ struct ListChild{
     adrChild last;
 };
 
-void createList(ListChild &L);
+void createList(ListChild &L); //sama
+void newElmChild(infotypeChild infoChild, adrChild &P); //sama
 void insertFirst(ListChild &L, adrChild P);
 void insertLast(ListChild &L, adrChild P);
-void insertAfter(adrChild Prec, adrChild P);
+void insertAfter(adrChild Prec, adrChild P); //sama
 void deleteFirst(ListChild &L, adrChild &P);
 void deleteLast(ListChild &L, adrChild &P);
-void deleteAfter(adrChild Prec, adrChild &P);
+void deleteAfter(adrChild Prec, adrChild &P); //sama
 
-adrChild alokasi(infotypeChild x);
 adrChild findElm(ListChild L, infotypeChild x);
 void printInfo(ListChild L);
 
