@@ -4,12 +4,12 @@
 #include <iostream>
 using namespace std;
 
+#include "childCDLL.h"
+
 #define first(L) L.first
 #define info(P) P->info
 #define next(P) P->next
 #define child(P) P->child
-
-#include "childCDLL.h"
 
 struct genre {
     string namaGenre;
@@ -23,20 +23,31 @@ typedef struct elmParent *adrParent;
 struct elmParent {
     infotypeParent info;
     adrParent next;
-//    List_child child;
+    ListChild child;
 };
 
 struct ListParent {
     adrParent first;
 };
 
+// Pre Condition
 void createList(ListParent &L);
-void insertFirst(ListParent &L, adrParent P);
-void insertAfter(ListParent &L, adrParent Prec, adrParent P);
-void deleteFirst(ListParent &L, adrParent &P);
-void deleteAfter(ListParent &L, adrParent Prec, adrParent &P);
-
 adrParent alokasi(infotypeParent x);
+int selectMenu();
+
+// Insert
+void insertFirst(ListParent &L, adrParent P);
+void insertLast(ListParent &L, adrParent P);
+//void insertAfter(ListParent &L, adrParent Prec, adrParent P);
+void tambahNData(ListParent &L);
+
+// Delete
+void deleteFirst(ListParent &L, adrParent &P);
+void deleteLast(ListParent &L, adrParent &P);
+void deleteAfter(ListParent &L, adrParent Prec, adrParent &P);
+void deleteGenre(ListParent &L);
+
+// Find & Show
 adrParent findElm(ListParent L, infotypeParent x);
 void printInfo(ListParent L);
 
