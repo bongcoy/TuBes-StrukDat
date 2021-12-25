@@ -5,7 +5,6 @@
 using namespace std;
 
 #define first(L) L.first
-#define last(L) L.last
 #define info(P) P->info
 #define next(P) P->next
 #define prev(P) P->prev
@@ -29,17 +28,17 @@ struct elmChild{
 
 struct ListChild{
     adrChild first;
-    adrChild last;
 };
 
 void createList(ListChild &L); //sama
-void newElmChild(infotypeChild infoChild, adrChild &P); //sama
+adrChild newElmChild(infotypeChild infoChild); //sama
+
 void insertFirst(ListChild &L, adrChild P);
+void insertAfter(ListChild &L, adrChild Prec, adrChild P); //sama
 void insertLast(ListChild &L, adrChild P);
-void insertAfter(adrChild Prec, adrChild P); //sama
 void deleteFirst(ListChild &L, adrChild &P);
+void deleteAfter(ListChild &L, adrChild Prec, adrChild &P); //sama
 void deleteLast(ListChild &L, adrChild &P);
-void deleteAfter(adrChild Prec, adrChild &P); //sama
 
 adrChild findElm(ListChild L, infotypeChild x);
 void printInfo(ListChild L);
