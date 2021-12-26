@@ -31,24 +31,31 @@ struct ListParent {
 };
 
 // Pre Condition
-void createList(ListParent &L);
-adrParent alokasi(infotypeParent x);
+void createListParent(ListParent &L);
+adrParent newElmParent(infotypeParent x);
 int selectMenu();
 
 // Insert
-void insertFirst(ListParent &L, adrParent P);
-void insertLast(ListParent &L, adrParent P);
-//void insertAfter(ListParent &L, adrParent Prec, adrParent P);
-void tambahNData(ListParent &L);
+void insertFirstParent(ListParent &L, adrParent P);
+void insertLastParent(ListParent &L, adrParent P);
+void insertAfterParent(ListParent &L, adrParent Prec, adrParent P);
+void tambahNParent(ListParent &L);
 
 // Delete
-void deleteFirst(ListParent &L, adrParent &P);
-void deleteLast(ListParent &L, adrParent &P);
-void deleteAfter(ListParent &L, adrParent Prec, adrParent &P);
-void deleteGenre(ListParent &L);
+void deleteFirstParent(ListParent &L, adrParent &P);
+void deleteLastParent(ListParent &L, adrParent &P);
+void deleteAfterParent(ListParent &L, adrParent Prec, adrParent &P);
 
 // Find & Show
-adrParent findElm(ListParent L, infotypeParent x);
-void printInfo(ListParent L);
+adrParent findElmParent(ListParent L, string x);
+void printInfoParent(ListParent L);
+
+// Child Relation
+void deleteGenre(ListParent &L);
+void cariGenre(ListParent L);
+void bikinListChild(ListChild &LC);
+void addMusic(ListParent &LP, ListChild LC, string genreP, string judul);
+void tambahLagu(ListParent &LP, ListChild LC);
+void hitungTotalPutaran(adrParent &P);
 
 #endif // PARENTSLL_H_INCLUDED

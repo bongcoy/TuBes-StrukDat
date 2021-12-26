@@ -30,18 +30,22 @@ struct ListChild{
     adrChild first;
 };
 
-void createList(ListChild &L); //sama
+// Pre condition
+void createListChild(ListChild &L); //sama
 adrChild newElmChild(infotypeChild infoChild); //sama
 
-void insertFirst(ListChild &L, adrChild P);
-void insertAfter(ListChild &L, adrChild Prec, adrChild P); //sama
-void insertLast(ListChild &L, adrChild P);
-void deleteFirst(ListChild &L, adrChild &P);
-void deleteAfter(ListChild &L, adrChild Prec, adrChild &P); //sama
-void deleteLast(ListChild &L, adrChild &P);
+// Insert
+void insertFirstChild(ListChild &L, adrChild P);
+void insertAfterChild(ListChild &L, adrChild Prec, adrChild P); //sama
+void insertLastChild(ListChild &L, adrChild P);
 
-adrChild findElm(ListChild L, infotypeChild x);
-void printInfo(ListChild L);
+// Delete
+void deleteFirstChild(ListChild &L, adrChild &P);
+void deleteAfterChild(ListChild &L, adrChild Prec, adrChild &P); //sama
+void deleteLastChild(ListChild &L, adrChild &P);
 
+// Find & Show
+adrChild findElmChild(ListChild L, string x);
+void printInfoChild(ListChild L);
 
 #endif // CHILDCDLL_H_INCLUDED

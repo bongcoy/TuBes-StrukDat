@@ -1,6 +1,6 @@
 #include "childCDLL.h"
 
-void createList(ListChild &L){
+void createListChild(ListChild &L){
 	first(L) = NULL;
 }
 adrChild newElmChild(infotypeChild infoChild){
@@ -14,7 +14,7 @@ adrChild newElmChild(infotypeChild infoChild){
 
     return P;
 }
-void insertFirst(ListChild &L, adrChild P){
+void insertFirstChild(ListChild &L, adrChild P){
 	if (first(L) == NULL){
         first(L) = P;
         next(P) = first(L);
@@ -27,16 +27,21 @@ void insertFirst(ListChild &L, adrChild P){
 		prev(first(L)) = P;
 	}
 }
-void insertAfter(ListChild &L, adrChild Prec, adrChild P){
+void insertAfterChild(ListChild &L, adrChild Prec, adrChild P){
     next(P) = next(Prec);
     prev(P) = Prec;
     prev(next(P)) = P;
     next(Prec) = P;
 }
-void insertLast(ListChild &L, adrChild P){
-    insertAfter(L,prev(first(L)),P);
+void insertLastChild(ListChild &L, adrChild P){
+    if (first(L) == NULL){
+        insertFirstChild(L,P);
+    }else{
+        insertAfterChild(L,prev(first(L)),P);
+    }
 }
-void deleteFirst(ListChild &L, adrChild &P){
+
+void deleteFirstChild(ListChild &L, adrChild &P){
     if (next(first(L)) == first(L)){
         P = first(L);
 
@@ -54,7 +59,7 @@ void deleteFirst(ListChild &L, adrChild &P){
     }
 }
 
-void deleteAfter(ListChild &L, adrChild Prec, adrChild &P){
+void deleteAfterChild(ListChild &L, adrChild Prec, adrChild &P){
     P = next(Prec);
     next(Prec) = next(P);
     prev(next(P)) = Prec;
@@ -63,14 +68,14 @@ void deleteAfter(ListChild &L, adrChild Prec, adrChild &P){
     prev(P) = NULL;
 }
 
-void deleteLast(ListChild &L, adrChild &P){
-    deleteAfter(L,prev(first(L)),P);
+void deleteLastChild(ListChild &L, adrChild &P){
+    deleteAfterChild(L,prev(first(L)),P);
 }
 
-adrChild findElm(ListChild L, infotypeChild x){
+adrChild findElmChild(ListChild L, string x){
     adrChild P = first(L);
 
-    while ((next(P) != first(L)) && (info(P).judul != x.judul)){
+    while ((next(P) != first(L)) && (info(P).judul != x)){
         P = next(P);
     }
 
@@ -81,7 +86,7 @@ adrChild findElm(ListChild L, infotypeChild x){
     }
 }
 
-void printInfo(ListChild L){
+void printInfoChild(ListChild L){
     adrChild P = first(L);
     int i = 1;
 
