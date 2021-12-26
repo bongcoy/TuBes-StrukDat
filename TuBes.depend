@@ -2,16 +2,16 @@
 1640485480 source:e:\c++\perkuliahan\praktikum\tubes\main.cpp
 	"parentSLL.h"
 
-1640490883 e:\c++\perkuliahan\praktikum\tubes\parentsll.h
+1640492915 e:\c++\perkuliahan\praktikum\tubes\parentsll.h
 	<iostream>
 	"childCDLL.h"
 
-1640485276 e:\c++\perkuliahan\praktikum\tubes\childcdll.h
+1640500255 e:\c++\perkuliahan\praktikum\tubes\childcdll.h
 	<iostream>
 
-1640489647 source:e:\c++\perkuliahan\praktikum\tubes\parentsll.cpp
+1640499855 source:e:\c++\perkuliahan\praktikum\tubes\parentsll.cpp
 	"parentSLL.h"
 
-1640489654 source:e:\c++\perkuliahan\praktikum\tubes\childcdll.cpp
+1640500485 source:e:\c++\perkuliahan\praktikum\tubes\childcdll.cpp
 	"childCDLL.h"
 

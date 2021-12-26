@@ -47,7 +47,7 @@ void deleteLastParent(ListParent &L, adrParent &P);
 void deleteAfterParent(ListParent &L, adrParent Prec, adrParent &P);
 void deleteGenre(ListParent &L);
 
-// Find & Show
+// Find & Print
 adrParent findElmParent(ListParent L, string x);
 void cariGenre(ListParent L);
 void printInfoParent(ListParent L);

@@ -195,84 +195,58 @@ void bikinListChild(ListChild &LC){
     infotypeChild musik;
     adrChild C;
 
-    musik.judul = "LoFi1";
+    musik.judul = "Dreams";
     musik.penyanyi = "Asoy";
     musik.album = "Anjay";
     musik.jumlahPutar = 5;
-    musik.genre = "LoFi";
+    arrGenre arr1 = {"LoFi","EDM",""};
     C = newElmChild(musik);
+    addMusicGenre(C,arr1);
     insertFirstChild(LC,C);
 
-    musik.judul = "LoFi2";
+    musik.judul = "Shallow Pools";
     musik.penyanyi = "Bsoy";
     musik.album = "Bnjay";
     musik.jumlahPutar = 7;
-    musik.genre = "LoFi";
+    arrGenre arr2 = {"LoFi","Jazz"};
     C = newElmChild(musik);
+    addMusicGenre(C,arr2);
     insertFirstChild(LC,C);
 
-    musik.judul = "Pop1";
+    musik.judul = "To The Bone";
     musik.penyanyi = "Csoy";
     musik.album = "Cnjay";
     musik.jumlahPutar = 10;
-    musik.genre = "Pop";
+    arrGenre arr3 = {"Pop","Jazz"};
     C = newElmChild(musik);
+    addMusicGenre(C,arr3);
     insertFirstChild(LC,C);
 
-    musik.judul = "Jazz1";
+    musik.judul = "Faded";
+    musik.penyanyi = "Csoy";
+    musik.album = "Cnjay";
+    musik.jumlahPutar = 1;
+    arrGenre arr4 = {"EDM","Pop"};
+    C = newElmChild(musik);
+    addMusicGenre(C,arr4);
+    insertFirstChild(LC,C);
+
+    musik.judul = "Solitude";
     musik.penyanyi = "Dsoy";
     musik.album = "Dnjay";
     musik.jumlahPutar = 7;
-    musik.genre = "Jazz";
+    arrGenre arr5 = {"LoFi","Jazz"};
     C = newElmChild(musik);
+    addMusicGenre(C,arr5);
     insertFirstChild(LC,C);
 
-    musik.judul = "Jazz2";
-    musik.penyanyi = "Esoy";
-    musik.album = "Enjay";
-    musik.jumlahPutar = 10;
-    musik.genre = "Jazz";
-    C = newElmChild(musik);
-    insertFirstChild(LC,C);
-
-    musik.judul = "Jazz3";
-    musik.penyanyi = "Fsoy";
-    musik.album = "Fnjay";
-    musik.jumlahPutar = 4;
-    musik.genre = "Jazz";
-    C = newElmChild(musik);
-    insertFirstChild(LC,C);
-
-    musik.judul = "EDM1";
+    musik.judul = "Alive";
     musik.penyanyi = "Gsoy";
     musik.album = "Gnjay";
-    musik.jumlahPutar = 1;
-    musik.genre = "EDM";
+    musik.jumlahPutar = 9;
+    arrGenre arr6 = {"EDM"};
     C = newElmChild(musik);
-    insertFirstChild(LC,C);
-
-    musik.judul = "EDM2";
-    musik.penyanyi = "Hsoy";
-    musik.album = "Hnjay";
-    musik.jumlahPutar = 2;
-    musik.genre = "EDM";
-    C = newElmChild(musik);
-    insertFirstChild(LC,C);
-
-    musik.judul = "EDM3";
-    musik.penyanyi = "Isoy";
-    musik.album = "Injay";
-    musik.jumlahPutar = 3;
-    musik.genre = "EDM";
-    C = newElmChild(musik);
-    insertFirstChild(LC,C);
-
-    musik.judul = "EDM4";
-    musik.penyanyi = "Jsoy";
-    musik.album = "Jnjay";
-    musik.jumlahPutar = 4;
-    musik.genre = "EDM";
-    C = newElmChild(musik);
+    addMusicGenre(C,arr6);
     insertFirstChild(LC,C);
 
     printInfoChild(LC);
@@ -282,7 +256,7 @@ void add1Music(ListParent &LP, ListChild LC, string genreP, string judul){
     adrChild C = findElmChild(LC,judul);
     adrChild newMusic;
 
-    if (P != NULL && C != NULL && info(C).genre == genreP){
+    if (P != NULL && C != NULL){
         newMusic = newElmChild(info(C));
         insertLastChild(child(P),newMusic);
     }
@@ -290,31 +264,29 @@ void add1Music(ListParent &LP, ListChild LC, string genreP, string judul){
 void tambahLagu(ListParent &LP, ListChild LC){
     adrParent P;
 
-    add1Music(LP,LC,"LoFi","LoFi1");
-    add1Music(LP,LC,"LoFi","LoFi2");
+    add1Music(LP,LC,"LoFi","Dreams");
+    add1Music(LP,LC,"LoFi","Shallow Pools");
     P = findElmParent(LP,"LoFi");
     hitungTotalPutaran(P);
     info(P).jumlahLagu = 2;
 
-    add1Music(LP,LC,"Pop","Pop1");
+    add1Music(LP,LC,"Pop","To The Bone");
+    add1Music(LP,LC,"Pop","Faded");
     P = findElmParent(LP,"Pop");
     hitungTotalPutaran(P);
-    info(P).jumlahLagu = 1;
+    info(P).jumlahLagu = 2;
 
-    add1Music(LP,LC,"Jazz","Jazz1");
-    add1Music(LP,LC,"Jazz","Jazz2");
-    add1Music(LP,LC,"Jazz","Jazz3");
+    add1Music(LP,LC,"Jazz","Solitude");
+    add1Music(LP,LC,"Jazz","Shallow Pools");
+    add1Music(LP,LC,"Jazz","To The Bone");
     P = findElmParent(LP,"Jazz");
     hitungTotalPutaran(P);
     info(P).jumlahLagu = 3;
 
-    add1Music(LP,LC,"EDM","EDM1");
-    add1Music(LP,LC,"EDM","EDM2");
-    add1Music(LP,LC,"EDM","EDM3");
-    add1Music(LP,LC,"EDM","EDM4");
+    add1Music(LP,LC,"EDM","Alive");
     P = findElmParent(LP,"EDM");
     hitungTotalPutaran(P);
-    info(P).jumlahLagu = 4;
+    info(P).jumlahLagu = 1;
 }
 void hitungTotalPutaran(adrParent &P){
     adrChild lagu = first(child(P));

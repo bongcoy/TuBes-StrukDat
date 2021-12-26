@@ -40,6 +40,14 @@ void insertLastChild(ListChild &L, adrChild P){
         insertAfterChild(L,prev(first(L)),P);
     }
 }
+void addMusicGenre(adrChild &P, arrGenre x){
+    // karena ga bisa langsung inisialisasi, jadi pake fungsi ini
+    int i = 0;
+    while (info(P).genre[i] != ""){
+        info(P).genre[i] = x[i];
+        i++;
+    }
+}
 
 void deleteFirstChild(ListChild &L, adrChild &P){
     if (next(first(L)) == first(L)){
@@ -96,11 +104,21 @@ void printInfoChild(ListChild L){
         cout << "Penyanyi : " << info(P).penyanyi << endl;
         cout << "Album : " << info(P).album << endl;
         cout << "Jumlah putar : " << info(P).jumlahPutar << endl;
-        cout << "Genre : " << info(P).genre << endl;
+        cout << "Genre : ";
+        printMusicGenre(info(P));
+        cout << endl;
+
         i++;
         P = next(P);
 
     }while (P != first(L));
 
     cout << endl;
+}
+void printMusicGenre(infotypeChild musik){
+    int i = 0;
+    while (i < NMAX){
+        cout << musik.genre[i] << " ";
+        i++;
+    }
 }

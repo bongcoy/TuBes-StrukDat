@@ -9,12 +9,16 @@ using namespace std;
 #define next(P) P->next
 #define prev(P) P->prev
 
+const int NMAX = 3;
+
+typedef string arrGenre[NMAX];
+
 struct lagu {
     string judul;
     string penyanyi;
     string album;
     int jumlahPutar;
-    string genre;
+    arrGenre genre = {"default","default","default"};
 };
 
 typedef lagu infotypeChild;
@@ -38,14 +42,16 @@ adrChild newElmChild(infotypeChild infoChild); //sama
 void insertFirstChild(ListChild &L, adrChild P);
 void insertAfterChild(ListChild &L, adrChild Prec, adrChild P); //sama
 void insertLastChild(ListChild &L, adrChild P);
+void addMusicGenre(adrChild &P, arrGenre x);
 
 // Delete
 void deleteFirstChild(ListChild &L, adrChild &P);
 void deleteAfterChild(ListChild &L, adrChild Prec, adrChild &P); //sama
 void deleteLastChild(ListChild &L, adrChild &P);
 
-// Find & Show
+// Find & Print
 adrChild findElmChild(ListChild L, string x);
 void printInfoChild(ListChild L);
+void printMusicGenre(infotypeChild musik);
 
 #endif // CHILDCDLL_H_INCLUDED
