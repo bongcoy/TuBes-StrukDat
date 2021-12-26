@@ -18,7 +18,7 @@ int selectMenu(){
 	cout << "===== MENU =====" << endl;
     cout << "1. Tambah N genre" << endl;
     cout << "2. Tampilkan semua genre" << endl;
-    cout << "3. Bikin 10 lagu" << endl;
+    cout << "3. Bikin 10 lagu dan Tampilkan" << endl;
     cout << "4. Tambah lagu ke Genre" << endl;
     cout << "5. Cari genre" << endl;
     cout << "6. Hapus genre" << endl;
@@ -117,41 +117,6 @@ void deleteAfterParent(ListParent &L, adrParent Prec, adrParent &P){
         cout << "data tidak valid" << endl;
     }
 }
-
-adrParent findElmParent(ListParent L, string x){
-	bool ada = false;
-
-    adrParent p = first(L);
-    adrParent q = NULL;
-
-    while (p != NULL && !ada){
-        if (info(p).namaGenre == x){
-            q = p;
-            ada = true;
-        }
-        p = next(p);
-    }
-    return q;
-}
-
-void printInfoParent(ListParent L){
-	adrParent P = first(L);
-    int i = 1;
-
-    if (first(L) != NULL){
-        while (P != NULL){
-            cout << "[" << i++ << "]" << endl;
-            cout << "Genre: " << info(P).namaGenre << endl;
-            cout << "Jumlah lagu: " << info(P).jumlahLagu << endl;
-            cout << "Total putaran: " << info(P).totalPutaran << endl;
-            P = next(P);
-        }
-        cout << endl;
-    }else{
-        cout << "List Kosong!" << endl;
-    }
-}
-
 void deleteGenre(ListParent &L){
     adrParent p = NULL;
     adrParent q = first(L);
@@ -171,8 +136,22 @@ void deleteGenre(ListParent &L){
         }
         deleteAfterParent(L, q, p);
     }
+}
 
-//    child(p) = NULL; //no match for operator, 'ListChild' and 'long long int'
+adrParent findElmParent(ListParent L, string x){
+	bool ada = false;
+
+    adrParent p = first(L);
+    adrParent q = NULL;
+
+    while (p != NULL && !ada){
+        if (info(p).namaGenre == x){
+            q = p;
+            ada = true;
+        }
+        p = next(p);
+    }
+    return q;
 }
 void cariGenre(ListParent L){
     string masukanGenre;
@@ -183,14 +162,35 @@ void cariGenre(ListParent L){
     P = findElmParent(L, masukanGenre);
 
     if (P != NULL){
-        cout << "Genre ditemukan : ";
-        cout << "Genre: " << info(P).namaGenre << endl;
+        cout << "Genre ditemukan : " << endl;
+        cout << "Nama Genre: " << info(P).namaGenre << endl;
         cout << "Jumlah lagu: " << info(P).jumlahLagu << endl;
         cout << "Total putaran: " << info(P).totalPutaran << endl;
+
+        cout << endl;
+        printInfoChild(child(P));
     } else {
         cout << "GENRE TIDAK DITEMUKAN" << endl;
     }
 }
+void printInfoParent(ListParent L){
+	adrParent P = first(L);
+    int i = 1;
+
+    if (first(L) != NULL){
+        while (P != NULL){
+            cout << "[" << i++ << "]" << endl;
+            cout << "Genre: " << info(P).namaGenre << endl;
+            cout << "Jumlah lagu: " << info(P).jumlahLagu << endl;
+            cout << "Total putaran: " << info(P).totalPutaran << endl;
+            P = next(P);
+        }
+        cout << endl;
+    }else{
+        cout << "List Kosong!" << endl;
+    }
+}
+
 void bikinListChild(ListChild &LC){
     infotypeChild musik;
     adrChild C;
@@ -277,7 +277,7 @@ void bikinListChild(ListChild &LC){
 
     printInfoChild(LC);
 }
-void addMusic(ListParent &LP, ListChild LC, string genreP, string judul){
+void add1Music(ListParent &LP, ListChild LC, string genreP, string judul){
     adrParent P = findElmParent(LP,genreP);
     adrChild C = findElmChild(LC,judul);
     adrChild newMusic;
@@ -287,32 +287,31 @@ void addMusic(ListParent &LP, ListChild LC, string genreP, string judul){
         insertLastChild(child(P),newMusic);
     }
 }
-
 void tambahLagu(ListParent &LP, ListChild LC){
     adrParent P;
 
-    addMusic(LP,LC,"LoFi","LoFi1");
-    addMusic(LP,LC,"LoFi","LoFi2");
+    add1Music(LP,LC,"LoFi","LoFi1");
+    add1Music(LP,LC,"LoFi","LoFi2");
     P = findElmParent(LP,"LoFi");
     hitungTotalPutaran(P);
     info(P).jumlahLagu = 2;
 
-    addMusic(LP,LC,"Pop","Pop1");
+    add1Music(LP,LC,"Pop","Pop1");
     P = findElmParent(LP,"Pop");
     hitungTotalPutaran(P);
     info(P).jumlahLagu = 1;
 
-    addMusic(LP,LC,"Jazz","Jazz1");
-    addMusic(LP,LC,"Jazz","Jazz2");
-    addMusic(LP,LC,"Jazz","Jazz3");
+    add1Music(LP,LC,"Jazz","Jazz1");
+    add1Music(LP,LC,"Jazz","Jazz2");
+    add1Music(LP,LC,"Jazz","Jazz3");
     P = findElmParent(LP,"Jazz");
     hitungTotalPutaran(P);
     info(P).jumlahLagu = 3;
 
-    addMusic(LP,LC,"EDM","EDM1");
-    addMusic(LP,LC,"EDM","EDM2");
-    addMusic(LP,LC,"EDM","EDM3");
-    addMusic(LP,LC,"EDM","EDM4");
+    add1Music(LP,LC,"EDM","EDM1");
+    add1Music(LP,LC,"EDM","EDM2");
+    add1Music(LP,LC,"EDM","EDM3");
+    add1Music(LP,LC,"EDM","EDM4");
     P = findElmParent(LP,"EDM");
     hitungTotalPutaran(P);
     info(P).jumlahLagu = 4;
@@ -328,4 +327,13 @@ void hitungTotalPutaran(adrParent &P){
     }while (lagu != first(child(P)));
 
     info(P).totalPutaran = total;
+}
+void hapusRelasi(ListParent &LP, string genreP){
+    adrParent P = findElmParent(LP,genreP);
+    adrChild C;
+
+    do {
+        deleteFirstChild(child(P),C);
+        C = next(C);
+    }while (C != first(child(P)));
 }
