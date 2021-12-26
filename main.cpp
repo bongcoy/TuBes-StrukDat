@@ -1,14 +1,10 @@
 #include "parentSLL.h"
-//#include "childCDLL.h"
 
 int main()
 {
-    // TEST RELASI CUY
     int pilihan = 0;
     ListParent LP;
     ListChild LC;
-
-//    adrParent P;
 
     pilihan = selectMenu();
 
@@ -30,9 +26,12 @@ int main()
             tambahLagu(LP,LC);
             break;
         case 5:
-            cariGenre(LP);
+            hapusRelasi(LP);
             break;
         case 6:
+            cariGenre(LP);
+            break;
+        case 7:
             deleteGenre(LP);
             break;
         }

@@ -98,20 +98,24 @@ void printInfoChild(ListChild L){
     adrChild P = first(L);
     int i = 1;
 
-    do {
-        cout << "Lagu [" << i << "]" << endl;
-        cout << "Judul lagu : " << info(P).judul << endl;
-        cout << "Penyanyi : " << info(P).penyanyi << endl;
-        cout << "Album : " << info(P).album << endl;
-        cout << "Jumlah putar : " << info(P).jumlahPutar << endl;
-        cout << "Genre : ";
-        printMusicGenre(info(P));
-        cout << endl;
+    if (P != NULL){
+        do {
+            cout << "Lagu [" << i << "]" << endl;
+            cout << "Judul lagu : " << info(P).judul << endl;
+            cout << "Penyanyi : " << info(P).penyanyi << endl;
+            cout << "Album : " << info(P).album << endl;
+            cout << "Jumlah putar : " << info(P).jumlahPutar << endl;
+            cout << "Genre : ";
+            printMusicGenre(info(P));
+            cout << endl;
 
-        i++;
-        P = next(P);
+            i++;
+            P = next(P);
 
-    }while (P != first(L));
+        }while (P != first(L));
+    }else{
+        cout << "TIDAK ADA LAGU PADA GENRE INI." << endl;
+    }
 
     cout << endl;
 }

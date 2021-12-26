@@ -57,6 +57,6 @@ void bikinListChild(ListChild &LC);
 void add1Music(ListParent &LP, ListChild LC, string genreP, string judul);
 void tambahLagu(ListParent &LP, ListChild LC);
 void hitungTotalPutaran(adrParent &P);
-void hapusRelasi(ListParent &LP, string genreP);
+void hapusRelasi(ListParent &LP);
 
 #endif // PARENTSLL_H_INCLUDED

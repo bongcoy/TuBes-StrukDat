@@ -18,10 +18,11 @@ int selectMenu(){
 	cout << "===== MENU =====" << endl;
     cout << "1. Tambah N genre" << endl;
     cout << "2. Tampilkan semua genre" << endl;
-    cout << "3. Bikin 10 lagu dan Tampilkan" << endl;
-    cout << "4. Tambah lagu ke Genre" << endl;
-    cout << "5. Cari genre" << endl;
-    cout << "6. Hapus genre" << endl;
+    cout << "3. Buat data lagu dan Tampilkan" << endl;
+    cout << "4. Masukkan lagu ke Genre" << endl;
+    cout << "5. Hapus relasi" << endl;
+    cout << "6. Cari genre" << endl;
+    cout << "7. Hapus genre" << endl;
     cout << "0. Exit" << endl;
     cout << "Masukkan menu: ";
 
@@ -179,10 +180,12 @@ void printInfoParent(ListParent L){
 
     if (first(L) != NULL){
         while (P != NULL){
-            cout << "[" << i++ << "]" << endl;
+            cout << "Genre [" << i++ << "]" << endl;
             cout << "Genre: " << info(P).namaGenre << endl;
             cout << "Jumlah lagu: " << info(P).jumlahLagu << endl;
-            cout << "Total putaran: " << info(P).totalPutaran << endl;
+            cout << "Total putaran: " << info(P).totalPutaran << endl << endl;
+
+            printInfoChild(child(P));
             P = next(P);
         }
         cout << endl;
@@ -199,7 +202,7 @@ void bikinListChild(ListChild &LC){
     musik.penyanyi = "Asoy";
     musik.album = "Anjay";
     musik.jumlahPutar = 5;
-    arrGenre arr1 = {"LoFi","EDM",""};
+    arrGenre arr1 = {"LoFi","EDM"};
     C = newElmChild(musik);
     addMusicGenre(C,arr1);
     insertFirstChild(LC,C);
@@ -292,20 +295,32 @@ void hitungTotalPutaran(adrParent &P){
     adrChild lagu = first(child(P));
     int total = 0;
 
-    do {
-        total += info(lagu).jumlahPutar;
+    if (lagu != NULL){
+        do {
+            total += info(lagu).jumlahPutar;
 
-        lagu = next(lagu);
-    }while (lagu != first(child(P)));
+            lagu = next(lagu);
+        }while (lagu != first(child(P)));
 
-    info(P).totalPutaran = total;
+        info(P).totalPutaran = total;
+    }else{
+        info(P).jumlahLagu = 0;
+        info(P).totalPutaran = 0;
+    }
+
 }
-void hapusRelasi(ListParent &LP, string genreP){
-    adrParent P = findElmParent(LP,genreP);
+void hapusRelasi(ListParent &LP){
+    string genreP;
+    adrParent P;
     adrChild C;
 
+    cout << "Masukkan playlist yang ingin dikosongkan : ";
+    cin >> genreP;
+    P = findElmParent(LP,genreP);
     do {
         deleteFirstChild(child(P),C);
         C = next(C);
     }while (C != first(child(P)));
+
+    hitungTotalPutaran(P);
 }

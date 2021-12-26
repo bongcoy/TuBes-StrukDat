@@ -35,18 +35,18 @@ struct ListChild{
 };
 
 // Pre condition
-void createListChild(ListChild &L); //sama
-adrChild newElmChild(infotypeChild infoChild); //sama
+void createListChild(ListChild &L);
+adrChild newElmChild(infotypeChild infoChild);
 
 // Insert
 void insertFirstChild(ListChild &L, adrChild P);
-void insertAfterChild(ListChild &L, adrChild Prec, adrChild P); //sama
+void insertAfterChild(ListChild &L, adrChild Prec, adrChild P);
 void insertLastChild(ListChild &L, adrChild P);
 void addMusicGenre(adrChild &P, arrGenre x);
 
 // Delete
 void deleteFirstChild(ListChild &L, adrChild &P);
-void deleteAfterChild(ListChild &L, adrChild Prec, adrChild &P); //sama
+void deleteAfterChild(ListChild &L, adrChild Prec, adrChild &P);
 void deleteLastChild(ListChild &L, adrChild &P);
 
 // Find & Print
