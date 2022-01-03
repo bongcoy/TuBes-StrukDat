@@ -55,7 +55,7 @@ void printInfoParent(ListParent L);
 // Child Relation
 void bikinListChild(ListChild &LC);
 void add1Music(ListParent &LP, ListChild LC, string genreP, string judul);
-void tambahLagu(ListParent &LP, ListChild LC);
+void masukkanLagu(ListParent &LP, ListChild LC);
 void hitungTotalPutaran(adrParent &P);
 void hapusRelasi(ListParent &LP);
 

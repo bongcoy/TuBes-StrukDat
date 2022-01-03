@@ -23,7 +23,7 @@ int main()
             bikinListChild(LC);
             break;
         case 4:
-            tambahLagu(LP,LC);
+            masukkanLagu(LP,LC);
             break;
         case 5:
             hapusRelasi(LP);

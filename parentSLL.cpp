@@ -184,6 +184,7 @@ void printInfoParent(ListParent L){
             cout << "Genre [" << i++ << "]" << endl;
             cout << "Genre: " << info(P).namaGenre << endl;
             cout << "Jumlah lagu: " << info(P).jumlahLagu << endl;
+            hitungTotalPutaran(P);
             cout << "Total putaran: " << info(P).totalPutaran << endl << endl;
 
             printInfoChild(child(P));
@@ -266,31 +267,31 @@ void add1Music(ListParent &LP, ListChild LC, string genreP, string judul){
         insertLastChild(child(P),newMusic);
     }
 }
-void tambahLagu(ListParent &LP, ListChild LC){
+void masukkanLagu(ListParent &LP, ListChild LC){
     adrParent P;
 
     add1Music(LP,LC,"LoFi","Dreams");
     add1Music(LP,LC,"LoFi","Shallow Pools");
     P = findElmParent(LP,"LoFi");
-    hitungTotalPutaran(P);
+//    hitungTotalPutaran(P);
     info(P).jumlahLagu = 2;
 
     add1Music(LP,LC,"Pop","To The Bone");
     add1Music(LP,LC,"Pop","Faded");
     P = findElmParent(LP,"Pop");
-    hitungTotalPutaran(P);
+//    hitungTotalPutaran(P);
     info(P).jumlahLagu = 2;
 
     add1Music(LP,LC,"Jazz","Solitude");
     add1Music(LP,LC,"Jazz","Shallow Pools");
     add1Music(LP,LC,"Jazz","To The Bone");
     P = findElmParent(LP,"Jazz");
-    hitungTotalPutaran(P);
+//    hitungTotalPutaran(P);
     info(P).jumlahLagu = 3;
 
     add1Music(LP,LC,"EDM","Alive");
     P = findElmParent(LP,"EDM");
-    hitungTotalPutaran(P);
+//    hitungTotalPutaran(P);
     info(P).jumlahLagu = 1;
 }
 void hitungTotalPutaran(adrParent &P){
@@ -323,6 +324,4 @@ void hapusRelasi(ListParent &LP){
         deleteFirstChild(child(P),C);
         C = next(C);
     }while (C != first(child(P)));
-
-    hitungTotalPutaran(P);
 }
