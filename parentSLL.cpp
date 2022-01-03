@@ -17,7 +17,7 @@ adrParent newElmParent(infotypeParent x){
 int selectMenu(){
 	cout << "===== MENU =====" << endl;
     cout << "1. Tambah N genre" << endl;
-    cout << "2. Tampilkan semua genre" << endl;
+    cout << "2. Tampilkan Genre dan Lagu" << endl;
     cout << "3. Buat data lagu dan Tampilkan" << endl;
     cout << "4. Masukkan lagu ke Genre" << endl;
     cout << "5. Hapus relasi" << endl;
@@ -28,6 +28,7 @@ int selectMenu(){
 
     int input = 0;
     cin >> input;
+    cout << endl;
 
     return input;
 }
@@ -199,8 +200,8 @@ void bikinListChild(ListChild &LC){
     adrChild C;
 
     musik.judul = "Dreams";
-    musik.penyanyi = "Asoy";
-    musik.album = "Anjay";
+    musik.penyanyi = "Goodnyght";
+    musik.album = "Sleep Cycles";
     musik.jumlahPutar = 5;
     arrGenre arr1 = {"LoFi","EDM"};
     C = newElmChild(musik);
@@ -208,8 +209,8 @@ void bikinListChild(ListChild &LC){
     insertFirstChild(LC,C);
 
     musik.judul = "Shallow Pools";
-    musik.penyanyi = "Bsoy";
-    musik.album = "Bnjay";
+    musik.penyanyi = "Kokoro";
+    musik.album = "The Way Home";
     musik.jumlahPutar = 7;
     arrGenre arr2 = {"LoFi","Jazz"};
     C = newElmChild(musik);
@@ -217,8 +218,8 @@ void bikinListChild(ListChild &LC){
     insertFirstChild(LC,C);
 
     musik.judul = "To The Bone";
-    musik.penyanyi = "Csoy";
-    musik.album = "Cnjay";
+    musik.penyanyi = "Pamungkas";
+    musik.album = "Flying Solo";
     musik.jumlahPutar = 10;
     arrGenre arr3 = {"Pop","Jazz"};
     C = newElmChild(musik);
@@ -226,31 +227,32 @@ void bikinListChild(ListChild &LC){
     insertFirstChild(LC,C);
 
     musik.judul = "Faded";
-    musik.penyanyi = "Csoy";
-    musik.album = "Cnjay";
+    musik.penyanyi = "Alan Walker";
+    musik.album = "Different World";
     musik.jumlahPutar = 1;
     arrGenre arr4 = {"EDM","Pop"};
     C = newElmChild(musik);
     addMusicGenre(C,arr4);
     insertFirstChild(LC,C);
 
-    musik.judul = "Solitude";
-    musik.penyanyi = "Dsoy";
-    musik.album = "Dnjay";
-    musik.jumlahPutar = 7;
-    arrGenre arr5 = {"LoFi","Jazz"};
-    C = newElmChild(musik);
-    addMusicGenre(C,arr5);
-    insertFirstChild(LC,C);
-
     musik.judul = "Alive";
-    musik.penyanyi = "Gsoy";
-    musik.album = "Gnjay";
+    musik.penyanyi = "Krewella";
+    musik.album = "Play Hard EP";
     musik.jumlahPutar = 9;
     arrGenre arr6 = {"EDM"};
     C = newElmChild(musik);
     addMusicGenre(C,arr6);
     insertFirstChild(LC,C);
+
+    musik.judul = "Solitude";
+    musik.penyanyi = "Billie Holiday";
+    musik.album = "Solitude";
+    musik.jumlahPutar = 4;
+    arrGenre arr5 = {"LoFi","Jazz"};
+    C = newElmChild(musik);
+    addMusicGenre(C,arr5);
+    insertFirstChild(LC,C);
+
 
     printInfoChild(LC);
 }
