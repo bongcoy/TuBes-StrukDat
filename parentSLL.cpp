@@ -171,8 +171,8 @@ void cariGenre(ListParent L){
     if (P != NULL){
         cout << "Genre ditemukan : " << endl;
         cout << "Nama Genre: " << info(P).namaGenre << endl;
+        hitungTotalPutaranDanLagu(P);
         cout << "Jumlah lagu: " << info(P).jumlahLagu << endl;
-        hitungTotalPutaran(P);
         cout << "Total putaran: " << info(P).totalPutaran << endl;
 
         cout << endl;
@@ -189,8 +189,8 @@ void printInfoParent(ListParent L){
         while (P != NULL){
             cout << "Genre [" << i++ << "]" << endl;
             cout << "Genre: " << info(P).namaGenre << endl;
+            hitungTotalPutaranDanLagu(P);
             cout << "Jumlah lagu: " << info(P).jumlahLagu << endl;
-            hitungTotalPutaran(P);
             cout << "Total putaran: " << info(P).totalPutaran << endl << endl;
 
             printInfoChild(child(P));
@@ -298,7 +298,7 @@ void masukkanLagu(ListParent &LP, ListChild LC){
     P = findElmParent(LP,"EDM");
     info(P).jumlahLagu = 1;
 }
-void hitungTotalPutaran(adrParent &P){
+void hitungTotalPutaranDanLagu(adrParent &P){
     adrChild lagu = first(child(P));
     int total = 0;
 

@@ -49,5 +49,7 @@ int main()
     }
     cout << "EXIT" << endl;
 
+    // Catatan : banyak fungsi yang memiliki lebih dari 1 responsibility agar tidak membuat banyak fungsi
+
     return 0;
 }
