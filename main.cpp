@@ -26,7 +26,7 @@ int main()
             masukkanLagu(LP,LC);
             break;
         case 5:
-            hapusRelasi(LP);
+            kosongkanGenre(LP); // sebelum : hapusRelasi(LP)
             break;
         case 6:
             cariGenre(LP);

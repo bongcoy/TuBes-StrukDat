@@ -273,25 +273,21 @@ void masukkanLagu(ListParent &LP, ListChild LC){
     add1Music(LP,LC,"LoFi","Dreams");
     add1Music(LP,LC,"LoFi","Shallow Pools");
     P = findElmParent(LP,"LoFi");
-//    hitungTotalPutaran(P);
     info(P).jumlahLagu = 2;
 
     add1Music(LP,LC,"Pop","To The Bone");
     add1Music(LP,LC,"Pop","Faded");
     P = findElmParent(LP,"Pop");
-//    hitungTotalPutaran(P);
     info(P).jumlahLagu = 2;
 
     add1Music(LP,LC,"Jazz","Solitude");
     add1Music(LP,LC,"Jazz","Shallow Pools");
     add1Music(LP,LC,"Jazz","To The Bone");
     P = findElmParent(LP,"Jazz");
-//    hitungTotalPutaran(P);
     info(P).jumlahLagu = 3;
 
     add1Music(LP,LC,"EDM","Alive");
     P = findElmParent(LP,"EDM");
-//    hitungTotalPutaran(P);
     info(P).jumlahLagu = 1;
 }
 void hitungTotalPutaran(adrParent &P){
@@ -312,7 +308,7 @@ void hitungTotalPutaran(adrParent &P){
     }
 
 }
-void hapusRelasi(ListParent &LP){
+void kosongkanGenre(ListParent &LP){
     string genreP;
     adrParent P;
     adrChild C;
