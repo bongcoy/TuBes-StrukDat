@@ -274,42 +274,36 @@ void add1Music(ListParent &LP, ListChild LC, string genreP, string judul){
     }
 }
 void masukkanLagu(ListParent &LP, ListChild LC){
-    adrParent P;
 
     add1Music(LP,LC,"LoFi","Dreams");
     add1Music(LP,LC,"LoFi","Shallow Pools");
-    P = findElmParent(LP,"LoFi");
-    info(P).jumlahLagu = 2;
 
     add1Music(LP,LC,"Pop","To The Bone");
     add1Music(LP,LC,"Pop","Faded");
-    P = findElmParent(LP,"Pop");
-    info(P).jumlahLagu = 2;
 
     add1Music(LP,LC,"Jazz","Solitude");
     add1Music(LP,LC,"Jazz","Shallow Pools");
     add1Music(LP,LC,"Jazz","To The Bone");
-    P = findElmParent(LP,"Jazz");
-    info(P).jumlahLagu = 3;
 
     add1Music(LP,LC,"EDM","Alive");
     add1Music(LP,LC,"EDM","Faded");
     add1Music(LP,LC,"EDM","Dreams");
-    P = findElmParent(LP,"EDM");
-    info(P).jumlahLagu = 1;
 }
 void hitungTotalPutaranDanLagu(adrParent &P){
     adrChild lagu = first(child(P));
-    int total = 0;
+    int totalPutaran = 0;
+    int totalLagu = 0;
 
     if (lagu != NULL){
         do {
-            total += info(lagu).jumlahPutar;
+            totalPutaran += info(lagu).jumlahPutar;
+            totalLagu++;
 
             lagu = next(lagu);
         }while (lagu != first(child(P)));
 
-        info(P).totalPutaran = total;
+        info(P).jumlahLagu = totalLagu;
+        info(P).totalPutaran = totalPutaran;
     }else{
         info(P).jumlahLagu = 0;
         info(P).totalPutaran = 0;

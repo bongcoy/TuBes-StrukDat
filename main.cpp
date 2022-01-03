@@ -20,7 +20,6 @@ int main()
             break;
         case 2:
             printInfoParent(LP);
-            // Kurang hitungTotalLagu()
             break;
         case 3:
             bikinListChild(LC);
