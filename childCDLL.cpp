@@ -77,7 +77,27 @@ void deleteAfterChild(ListChild &L, adrChild Prec, adrChild &P){
 }
 
 void deleteLastChild(ListChild &L, adrChild &P){
-    deleteAfterChild(L,prev(first(L)),P);
+    deleteAfterChild(L,prev(prev(first(L))),P);
+}
+void deleteLagu(ListChild &L, adrChild &C){
+    // Kurang lebih sama dengan void deleteGenre() pada parent
+    adrChild D = first(L);
+
+    if (C == NULL){
+        cout << "Lagu tidak ditemukan" << endl;
+    }else{
+        if (C == first(L)) {
+            deleteFirstChild(L, C);
+        } else if (next(C) == first(L)) {
+            deleteLastChild(L, C);
+        } else {
+            while (next(D) != C) {
+                D = next(D);
+            }
+            deleteAfterChild(L, D, C);
+        }
+    }
+
 }
 
 adrChild findElmChild(ListChild L, string x){

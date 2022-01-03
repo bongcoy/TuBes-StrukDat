@@ -48,6 +48,7 @@ void addMusicGenre(adrChild &P, arrGenre x);
 void deleteFirstChild(ListChild &L, adrChild &P);
 void deleteAfterChild(ListChild &L, adrChild Prec, adrChild &P);
 void deleteLastChild(ListChild &L, adrChild &P);
+void deleteLagu(ListChild &L, adrChild &P);
 
 // Find & Print
 adrChild findElmChild(ListChild L, string x);

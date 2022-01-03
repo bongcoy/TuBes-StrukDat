@@ -6,6 +6,8 @@ int main()
     ListParent LP;
     ListChild LC;
 
+    adrParent P;
+
     pilihan = selectMenu();
 
     createListParent(LP);
@@ -18,6 +20,7 @@ int main()
             break;
         case 2:
             printInfoParent(LP);
+            // Kurang hitungTotalLagu()
             break;
         case 3:
             bikinListChild(LC);
@@ -26,13 +29,19 @@ int main()
             masukkanLagu(LP,LC);
             break;
         case 5:
-            kosongkanGenre(LP); // sebelum : hapusRelasi(LP)
+            printInfoChild(LC);
             break;
         case 6:
-            cariGenre(LP);
+            kosongkanGenre(LP); // sebelum : hapusRelasi(LP)
             break;
         case 7:
-            deleteGenre(LP);
+            cariGenre(LP);
+            break;
+        case 8:
+            deleteGenre(LP,P);
+            break;
+        case 9:
+            hapusLaguDanRelasi(LP,LC);
             break;
         }
         cout << endl;

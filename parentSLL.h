@@ -45,7 +45,7 @@ void tambahNParent(ListParent &L);
 void deleteFirstParent(ListParent &L, adrParent &P);
 void deleteLastParent(ListParent &L, adrParent &P);
 void deleteAfterParent(ListParent &L, adrParent Prec, adrParent &P);
-void deleteGenre(ListParent &L);
+void deleteGenre(ListParent &L, adrParent &P);
 
 // Find & Print
 adrParent findElmParent(ListParent L, string x);
@@ -58,5 +58,6 @@ void add1Music(ListParent &LP, ListChild LC, string genreP, string judul);
 void masukkanLagu(ListParent &LP, ListChild LC);
 void hitungTotalPutaran(adrParent &P);
 void kosongkanGenre(ListParent &LP);
+void hapusLaguDanRelasi(ListParent &LP, ListChild &LC);
 
 #endif // PARENTSLL_H_INCLUDED
