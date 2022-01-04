@@ -13,3 +13,6 @@ Relasi : N-N
 Jenis Linked List :
 - Parent = SLL tanpa pointer Last
 - Child = CDLL tanpa pointer Last
+
+Ilustrasi :
+![alt text] (https://drive.google.com/file/d/1zAfH4MuCnFq93MaXqx9yYb0Y4SfSFGWx/view?usp=sharing)
