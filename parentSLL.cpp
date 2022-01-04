@@ -25,6 +25,7 @@ int selectMenu(){
     cout << "7. Cari genre" << endl;
     cout << "8. Hapus genre" << endl;
     cout << "9. Hapus lagu beserta relasinya" << endl;
+    cout << "10. Tukar child" << endl;
     cout << "0. Exit" << endl;
     cout << "Masukkan menu: ";
 
@@ -255,7 +256,7 @@ void bikinListChild(ListChild &LC){
     musik.penyanyi = "Billie Holiday";
     musik.album = "Solitude";
     musik.jumlahPutar = 4;
-    arrGenre arr5 = {"LoFi","Jazz"};
+    arrGenre arr5 = {"EDM","Jazz"};
     C = newElmChild(musik);
     addMusicGenre(C,arr5);
     insertFirstChild(LC,C);
@@ -346,4 +347,21 @@ void hapusLaguDanRelasi(ListParent &LP, ListChild &LC){
             P = next(P);
         }
     }
+}
+void tukarChild(ListParent &LP){
+    ListChild TEMP;
+    string genre1, genre2;
+    adrParent P1, P2;
+
+    cout << "Masukkan genre 1 : ";
+    cin >> genre1;
+    cout << "Masukkan genre 2 : ";
+    cin >> genre2;
+
+    P1 = findElmParent(LP,genre1);
+    P2 = findElmParent(LP,genre2);
+
+    TEMP = child(P1);
+    child(P1) = child(P2);
+    child(P2) = TEMP;
 }

@@ -31,7 +31,7 @@ int main()
             printInfoChild(LC);
             break;
         case 6:
-            kosongkanGenre(LP); // sebelum : hapusRelasi(LP)
+            kosongkanGenre(LP);
             break;
         case 7:
             cariGenre(LP);
@@ -41,6 +41,9 @@ int main()
             break;
         case 9:
             hapusLaguDanRelasi(LP,LC);
+            break;
+        case 10:
+            tukarChild(LP);
             break;
         }
         cout << endl;

@@ -59,5 +59,6 @@ void masukkanLagu(ListParent &LP, ListChild LC);
 void hitungTotalPutaranDanLagu(adrParent &P);
 void kosongkanGenre(ListParent &LP);
 void hapusLaguDanRelasi(ListParent &LP, ListChild &LC);
+void tukarChild(ListParent &LP);
 
 #endif // PARENTSLL_H_INCLUDED
