@@ -15,4 +15,4 @@ Jenis Linked List :
 - Child = CDLL tanpa pointer Last
 
 Ilustrasi :
-![Ilustrasi](https://drive.google.com/file/d/1zAfH4MuCnFq93MaXqx9yYb0Y4SfSFGWx/view)
+![Ilustrasi](D:\Kuliah\MatKul (Materi, CTT, Hasil tugas)\Semester 3\Struktur Data\Kuliah\Tubes\TuBes StrukDat .png)
