@@ -281,13 +281,13 @@ void masukkanLagu(ListParent &LP, ListChild LC){
     add1Music(LP,LC,"Pop","To The Bone");
     add1Music(LP,LC,"Pop","Faded");
 
-    add1Music(LP,LC,"Jazz","Solitude");
     add1Music(LP,LC,"Jazz","Shallow Pools");
     add1Music(LP,LC,"Jazz","To The Bone");
+    add1Music(LP,LC,"Jazz","Solitude");
 
     add1Music(LP,LC,"EDM","Alive");
+    add1Music(LP,LC,"EDM","Solitude");
     add1Music(LP,LC,"EDM","Faded");
-    add1Music(LP,LC,"EDM","Dreams");
 }
 void hitungTotalPutaranDanLagu(adrParent &P){
     adrChild lagu = first(child(P));
