@@ -329,7 +329,8 @@ void hapusLaguDanRelasi(ListParent &LP, ListChild &LC){
     adrParent P = first(LP);
 
     cout << "Judul Lagu yang ingin dihapus : ";
-    cin >> judulLagu;
+    cin.ignore();
+    getline(cin,judulLagu);
     C = findElmChild(LC,judulLagu);
 
     deleteLagu(LC,C);
