@@ -26,6 +26,7 @@ int selectMenu(){
     cout << "8. Hapus genre" << endl;
     cout << "9. Hapus lagu beserta relasinya" << endl;
     cout << "10. Tukar child" << endl;
+    cout << "11. Hapus dan Buat relasi child dari parent" << endl;
     cout << "0. Exit" << endl;
     cout << "Masukkan menu: ";
 
@@ -299,7 +300,7 @@ void hitungTotalPutaranDanLagu(adrParent &P){
         do {
             totalPutaran += info(lagu).jumlahPutar;
             totalLagu++;
-
+            // MASIH ERROR DI SINIIIIII ROCKnya
             lagu = next(lagu);
         }while (lagu != first(child(P)));
 
@@ -311,14 +312,8 @@ void hitungTotalPutaranDanLagu(adrParent &P){
     }
 
 }
-void kosongkanGenre(ListParent &LP){
-    string genreP;
-    adrParent P;
+void kosongkanGenre(adrParent &P){
     adrChild C;
-
-    cout << "Judul Playlist/Genre yang ingin dikosongkan : ";
-    cin >> genreP;
-    P = findElmParent(LP,genreP);
     do {
         deleteFirstChild(child(P),C);
         C = next(C);
@@ -364,4 +359,15 @@ void tukarChild(ListParent &LP){
     TEMP = child(P1);
     child(P1) = child(P2);
     child(P2) = TEMP;
+}
+void hapusRelasi(adrParent &P, ListChild &LC){
+    if (P != NULL){
+        LC = child(P);
+        kosongkanGenre(P);
+    }
+}
+void buatRelasi(adrParent &P, ListChild LC){
+    if (P!= NULL){
+        child(P) = LC;
+    }
 }

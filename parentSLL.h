@@ -57,8 +57,10 @@ void bikinListChild(ListChild &LC);
 void add1Music(ListParent &LP, ListChild LC, string genreP, string judul);
 void masukkanLagu(ListParent &LP, ListChild LC);
 void hitungTotalPutaranDanLagu(adrParent &P);
-void kosongkanGenre(ListParent &LP);
+void kosongkanGenre(adrParent &P);
 void hapusLaguDanRelasi(ListParent &LP, ListChild &LC);
 void tukarChild(ListParent &LP);
+void hapusRelasi(adrParent &P, ListChild &LC);
+void buatRelasi(adrParent &P, ListChild LC);
 
 #endif // PARENTSLL_H_INCLUDED

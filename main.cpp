@@ -2,9 +2,11 @@
 
 int main()
 {
+    string genre;
     int pilihan = 0;
     ListParent LP;
     ListChild LC;
+    ListChild temp;
 
     adrParent P;
 
@@ -31,7 +33,10 @@ int main()
             printInfoChild(LC);
             break;
         case 6:
-            kosongkanGenre(LP);
+            cout << "Judul Playlist/Genre yang ingin dikosongkan : ";
+            cin >> genre;
+            P = findElmParent(LP,genre);
+            kosongkanGenre(P);
             break;
         case 7:
             cariGenre(LP);
@@ -44,6 +49,17 @@ int main()
             break;
         case 10:
             tukarChild(LP);
+            break;
+        case 11:
+            cout << "Genre child yg ingin dihapus : ";
+            cin >> genre;
+            P = findElmParent(LP,genre);
+            hapusRelasi(P,temp);
+
+            cout << "Genre child yg ingin dibuat : ";
+            cin >> genre;
+            P = findElmParent(LP,genre);
+            buatRelasi(P,temp);
             break;
         }
         cout << endl;

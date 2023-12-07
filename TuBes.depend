@@ -1,17 +1,33 @@
 # depslib dependency file v1.0
-1641280650 source:e:\c++\perkuliahan\praktikum\tubes\main.cpp
+1641284039 source:e:\c++\perkuliahan\praktikum\tubes\main.cpp
 	"parentSLL.h"
 
-1641280583 e:\c++\perkuliahan\praktikum\tubes\parentsll.h
+1641283564 e:\c++\perkuliahan\praktikum\tubes\parentsll.h
 	<iostream>
 	"childCDLL.h"
 
 1641221017 e:\c++\perkuliahan\praktikum\tubes\childcdll.h
 	<iostream>
 
-1641280629 source:e:\c++\perkuliahan\praktikum\tubes\parentsll.cpp
+1641283810 source:e:\c++\perkuliahan\praktikum\tubes\parentsll.cpp
 	"parentSLL.h"
 
 1641222664 source:e:\c++\perkuliahan\praktikum\tubes\childcdll.cpp
 	"childCDLL.h"
+
+1641222664 source:e:\c++\perkuliahan\std\praktikum\tubes\childcdll.cpp
+	"childCDLL.h"
+
+1641221017 e:\c++\perkuliahan\std\praktikum\tubes\childcdll.h
+	<iostream>
+
+1641284039 source:e:\c++\perkuliahan\std\praktikum\tubes\main.cpp
+	"parentSLL.h"
+
+1641283564 e:\c++\perkuliahan\std\praktikum\tubes\parentsll.h
+	<iostream>
+	"childCDLL.h"
+
+1641284894 source:e:\c++\perkuliahan\std\praktikum\tubes\parentsll.cpp
+	"parentSLL.h"
 
